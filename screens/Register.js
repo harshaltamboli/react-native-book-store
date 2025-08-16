@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,11 +12,42 @@ const[password,setPassword] = useState("");
 const[repassword,setRepassword] = useState("");
 
 
+
+const ValidateEmail = email => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
 const handelRegister=() => {
+
+  if(!email){
+    Alert.alert("Enter The Email");
+    return;
+  }
+  if(!password){
+    Alert.alert("Enter the password ");
+
+    return;
+  }
+  if(!ValidateEmail(email)){
+    Alert.alert("Enter The Valid Email");
+    return;
+  }
+if(password!==repassword){
+  Alert.alert("pasword not match");
+  return;
+}
+
+if(password.length<6){
+  Alert.alert("at list 6 digit enter");
+  return ;
+}
+
 console.log("name",name);
 console.log("Email",email);
 console.log("password",password);
 console.log("confirm password",repassword);
+Alert.alert("Register SuccesFully");
 
 }
 

@@ -1,12 +1,11 @@
+// StackNavigator.js
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Screens
-
 import Login from '../../screens/Login';
 import Register from '../../screens/Register';
-
-
+import Dashbord from '../../screens/Dashbord';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,10 +17,9 @@ const StackNavigator = () => {
         headerShown: false, // hide header
       }}
     >
-     
       <Stack.Screen name="Login" component={Login} />
-       <Stack.Screen name="Register" component={Register} />
-    
+      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Dashbord" component={Dashbord} />
     </Stack.Navigator>
   );
 };

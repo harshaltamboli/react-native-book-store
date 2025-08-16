@@ -41,8 +41,16 @@ const Login = ({navigation}) => {
     }
     console.log('Email:', email);
     console.log('Password:', password);
-        Alert.alert("Success", "Login successful!");
-
+        Alert.alert("Success", 
+        "Login successful!",
+          [
+            {
+              text:"ok",
+              onPress:()=>navigation.navigate('Dashbord')
+            }
+          ]
+        );
+      
   };
 
   return (
@@ -70,9 +78,13 @@ const Login = ({navigation}) => {
           secureTextEntry
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}> Login </Text>
-        </TouchableOpacity>
+        <TouchableOpacity 
+  style={styles.button} 
+  onPress={handleLogin}
+>
+  <Text style={styles.buttonText}>Login</Text>
+</TouchableOpacity>
+
 
         <TouchableOpacity 
         style={styles.button}

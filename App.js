@@ -6,7 +6,8 @@ import StackNavigator from "./src/navigation/StackNavigator";
 const App = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <NavigationContainer>
+      <NavigationContainer
+      >
         <StackNavigator />
       </NavigationContainer>
     </GestureHandlerRootView>
